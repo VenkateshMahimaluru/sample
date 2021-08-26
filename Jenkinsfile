@@ -114,7 +114,7 @@ pipeline {
 				'''
 				}
 			}
-		stage(creating_aliases) {
+		stage(creating_aliases-dev) {
 			steps {
 				echo "Creating aliases..."
 				sh '''#!/bin/bash
@@ -169,7 +169,7 @@ pipeline {
 				'''
 				}
 			}
-		stage(creating_aliases) {
+		stage(creating_aliases-prod) {
 			steps {
 				echo "Creating aliases..."
 				sh '''#!/bin/bash
