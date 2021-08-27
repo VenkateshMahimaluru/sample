@@ -2,7 +2,7 @@ pipeline {
     agent any
 	stage('pre-build') {
 			input {
-				timeout(activity: true, time: 60) {
+				timeout(activity: true, time: 60) 
 				message "Do you want to proceed for Production deployment?", ok: 'Yes'
 			}
 			steps{
