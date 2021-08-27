@@ -1,13 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'sample:latest'
-            label 'docker'
-            registryUrl 'https://389627665088.dkr.ecr.us-east-1.amazonaws.com'
-            args '-u 0:0'
-        }
-    }
-		stage('pre-build') {
+    agent any
+	stage('pre-build') {
 			input {
 				timeout(activity: true, time: 60) {
 				message "Do you want to proceed for Production deployment?", ok: 'Yes'
@@ -33,5 +26,4 @@ pipeline {
 
 			}
 		}
-}
-    
+	}
