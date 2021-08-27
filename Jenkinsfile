@@ -2,9 +2,8 @@ pipeline {
     agent any
 	stages {
 		stage('pre-build') {
-			input {
-				timeout(activity: true, time: 60) 
-				message "Do you want to proceed for Production deployment?", ok: 'Yes'
+			timeout(activity: true, time: 60, unit: 'MINUTES') {
+				input { message "Do you want to proceed for Production deployment?", ok: 'Yes' }
 			}
 			steps{
 				sh '''#!/bin/bash
