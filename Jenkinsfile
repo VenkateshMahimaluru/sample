@@ -4,7 +4,7 @@ pipeline {
 		stage('pre-build') {
 			steps {
 				timeout(activity: true, time: 60, unit: 'MINUTES') {
-				input message "Do you want to proceed for Production deployment?", ok: 'Yes'
+				input message: 'Do you want to proceed for Production deployment?' , ok: 'Yes'
 				}
 			}
 			steps{
