@@ -21,7 +21,7 @@ pipeline {
 				echo $TARGET_ACCOUNT_ID
 				export AWS_DEFAULT_REGION=`cat deployment.yaml | yq -r .region`
 				echo $AWS_DEFAULT_REGION
-				export ROLE="arn:aws:iam::$TARGET_ACCOUNT_ID:role/LambdaExecutionRole"
+				export ROLE="arn:aws:iam::$TARGET_ACCOUNT_ID:role/AWSControlTowerExecution"
 				echo "========  assuming permissions => $ROLE ========="
 				account_role=`aws sts assume-role --role-arn $ROLE --role-session-name "jenkins-prismacode-$CIUUID"`
 				export AWS_ACCESS_KEY_ID=$(echo $account_role | jq -r .Credentials.AccessKeyId)
