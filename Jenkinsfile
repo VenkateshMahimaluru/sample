@@ -22,20 +22,11 @@ pipeline {
 				export AWS_DEFAULT_REGION='cat deployment.yaml | yq -r .region'
 				echo $AWS_DEFAULT_REGION
 				export ROLE="arn:aws:iam::$TARGET_ACCOUNT_ID:role/AWSControlTowerExecution"
-				echo "========  assuming permissions => $ROLE ========="
-				account_role='aws sts assume-role --role-arn $ROLE --role-session-name "jenkins-prismacode-$CIUUID"'
-				export AWS_ACCESS_KEY_ID=$(echo $account_role | jq -r .Credentials.AccessKeyId)
-				echo $AWS_ACCESS_KEY_ID
-				export AWS_SECRET_ACCESS_KEY=$(echo $account_role | jq -r .Credentials.SecretAccessKey)
-				echo $AWS_SECRET_ACCESS_KEY
-				export AWS_SESSION_TOKEN=$(echo $account_role | jq -r .Credentials.SessionToken)
-				echo $AWS_SESSION_TOKEN
-				export AWS_SECURITY_TOKEN=$(echo $account_role | jq -r .Credentials.SessionToken)
-				echo $AWS_SECURITY_TOKEN
+				
 				}
 
-			sh "echo The CI UUID is $CIUUID"
-			sh "echo The Random String is $RANDOM_STRING"
+				sh "echo The CI UUID is $CIUUID"
+				sh "echo The Random String is $RANDOM_STRING"
 			}
 		}
 	}
