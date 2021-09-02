@@ -9,8 +9,11 @@ pipeline {
 					    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
 					    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 					]]) {
-					   	 bat "echo this is ${env.AWS_ACCESS_KEY_ID}"
-               					 bat "echo this is ${env.AWS_SECRET_ACCESS_KEY}"
+					bat '''
+						export ROLE="arn:aws:iam::389627665088:role/lambda-ex"
+						echo "========  assuming permissions => $ROLE ========="
+						account_role=`aws sts assume-role --role-arn $ROLE --role-session-name "jenkins-prismacode-$CIUUID"`
+					'''
 					}
 			}
 		}
