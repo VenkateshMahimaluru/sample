@@ -4,7 +4,7 @@ pipeline {
 		stage('pre-build') {
 			steps  {
 				
-				sh '''#!/bin/bash
+				bat '''#!/bin/bash
 				rm -f prop.properties
 				echo -ne 'CIUUID='>>prop.properties
 				uuidgen>>prop.properties
@@ -25,8 +25,8 @@ pipeline {
 				
 				}
 
-				sh "echo The CI UUID is $CIUUID"
-				sh "echo The Random String is $RANDOM_STRING"
+				bat "echo The CI UUID is $CIUUID"
+				bat "echo The Random String is $RANDOM_STRING"
 			}
 		}
 	}
