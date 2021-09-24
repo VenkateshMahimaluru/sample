@@ -3,18 +3,7 @@ pipeline {
 	stages {
 		stage('pre-build') {
 			steps  {
-				withCredentials([[
-					    $class: 'AmazonWebServicesCredentialsBinding',
-					    credentialsId: "AWSCredsSBX",
-					    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-					    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-					]]) {
-					sh '''
-						export ROLE="arn:aws:iam::389627665088:role/lambda-ex"
-						echo "========  assuming permissions => $ROLE ========="
-						account_role=`aws sts assume-role --role-arn $ROLE --role-session-name "jenkins-prismacode-$CIUUID"`
-						echo "Assumed Role"
-					'''
+				emailext body: 'input message: Do you need this?', subject: 'Test', to: 'venkatesh.mahimaluru@accenture.com'
 					}
 			}
 		}
