@@ -1,3 +1,7 @@
+def notifywhenfailed() {
+echo "hello"
+}
+
 node {
         stage('Build') {
 
