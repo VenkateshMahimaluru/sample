@@ -1,0 +1,9 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                            DescribeChangeSet                                                                            |
++--------+----------------+------------------------+---------------------------------------------+--------------+-------------------------------+------------+------------+
+| Action | ChangeSetName  |   LogicalResourceId    |             PhysicalResourceId              | Replacement  |         ResourceType          | StackName  |   Type     |
++--------+----------------+------------------------+---------------------------------------------+--------------+-------------------------------+------------+------------+
+|  Modify|  None          |  ScpPolicy1            |  CustomResourcePhysicalID                   |  Conditional |  Custom::ServiceControlPolicy |  None      |  Resource  |
+|  Modify|  None          |  ScpResourceLambdaRole |  test1-ScpResourceLambdaRole-18T7R1WZHJDFZ  |  False       |  AWS::IAM::Role               |  None      |  Resource  |
+|  Modify|  None          |  ScpResourceLambda     |  test1-ScpResourceLambda-f6hM7X0KGV4a       |  False       |  AWS::Lambda::Function        |  None      |  Resource  |
++--------+----------------+------------------------+---------------------------------------------+--------------+-------------------------------+------------+------------+
