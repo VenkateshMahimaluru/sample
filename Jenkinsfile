@@ -1,7 +1,7 @@
 node {
         stage('Build') {
 
-               sh echo "This is build"
+               sh "echo This is build"
 
         }
 }
