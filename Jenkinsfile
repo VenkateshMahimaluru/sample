@@ -6,9 +6,7 @@ pipeline {
 				script {
 					 env.BUILD_EMAIL_RECIPIENT='venkatesh.mahimaluru@accenture.com'
 				}
-				 // Call a remote system to start execution, passing a callback url
-			  bat "curl -X POST -H 'Content-Type: application/json' -d '{\"callback\":\"${env.BUILD_URL}input/app/abort\"}' http://httpbin.org/post"
-
+	
 				input id: 'app', message: 'Are you ready to approve?', ok: 'Approve', parameters: [choice(choices: ['Approve', 'Deny'], name: 'Approval')]
 				
 			  // Block and wait for the remote system to callback
