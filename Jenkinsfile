@@ -7,7 +7,7 @@ pipeline {
 					 env.BUILD_EMAIL_RECIPIENT='venkatesh.mahimaluru@accenture.com'
 				}
 	
-				input id: 'app', message: 'Are you ready to approve?', ok: 'Approve', parameters: [choice(choices: ['Approve', 'Deny'], name: 'Approval')]
+				input id: 'app', message: 'Are you ready to approve?', ok: 'Approve'
 				
 			  // Block and wait for the remote system to callback
 			 
