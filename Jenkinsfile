@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
                 steps {
                         script{
-                               bat 
+                               
                                echo "${env.BRANCH_NAME}"
                                echo "${env.BUILD_NUMBER}"
                                
