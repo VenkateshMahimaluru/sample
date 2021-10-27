@@ -7,6 +7,7 @@ pipeline {
                         script{
                                if ("${env.BRANCH_NAME}" == "test") {
                                 println "this is test"
+                                bat mkdir new
                             } else {
                                 println "The File does not exist :("
                             }  
