@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
                 steps {
                         script{
-                               if ("${env.BRANCH_NAME}" == test) {
+                               if ("${env.BRANCH_NAME}" == "test") {
                                 println "this is test"
                             } else {
                                 println "The File does not exist :("
