@@ -3,7 +3,7 @@ pipeline {
         agent any
         stages {
         stage('Build') {
-                step {
+                steps {
                         script{
                                bat '''
                                echo "${env.BRANCH_NAME}"
@@ -13,7 +13,7 @@ pipeline {
                    
              }
         }
-                stage('Check') {
+  stage('Check') {
     steps {        
         script {
             Boolean bool = fileExists 'NewFile.txt'
