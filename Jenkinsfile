@@ -9,10 +9,10 @@ pipeline {
                                         echo "this is test"
                                         sh "mkdir newfolder"
                                 }
-                else
-                      echo "This is build"
-                        }
-                }
+                                else {
+                                        echo "This is build" }
+                  }
+             }
         }
     }
 }
