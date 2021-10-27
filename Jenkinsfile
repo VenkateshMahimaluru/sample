@@ -12,7 +12,7 @@ pipeline {
                                 else {
                                         echo "This is build" }
                             '''
-                  }
+              
              }
         }
     }
