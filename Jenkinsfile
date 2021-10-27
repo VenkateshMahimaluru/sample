@@ -5,8 +5,11 @@ pipeline {
         stage('Build') {
                 steps {
                         script{
-                               
-                               echo "${env.BRANCH_NAME}"
+                               if ("${env.BRANCH_NAME}" == test) {
+                                println "this is test"
+                            } else {
+                                println "The File does not exist :("
+                            }  
                                echo "${env.BUILD_NUMBER}"
                                
                         }
