@@ -1,16 +1,13 @@
-def notifywhenfailed() {
-echo "hello"
-}
 
-node {
+pipeline {
+        agent any
+        stages {
         stage('Build') {
-
-               sh "echo This is build"
-
+                if( env.BRANCH_NAME == 'test')
+                        echo "this is test"
+                else
+                      echo "This is build"
         }
-}
-post {
-    always {
-        notifywhenfailed()
     }
 }
+
