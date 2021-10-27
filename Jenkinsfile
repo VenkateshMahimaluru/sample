@@ -8,6 +8,7 @@ pipeline {
                                if ("${env.BRANCH_NAME}" == "test") {
                                 println "this is test"
                                 bat 'mkdir new'
+                                bat 'ls -lrt'
                             } else {
                                 println "The File does not exist :("
                             }  
