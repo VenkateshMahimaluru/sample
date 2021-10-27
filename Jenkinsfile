@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
                 steps{
                         sh '''
-                                if (env.BRANCH_NAME == 'test') {
+                                if [[ env.BRANCH_NAME == 'test' ]]; then 
                                         echo "this is test"
-                                        sh "mkdir newfolder"
+                                        "mkdir newfolder"
                                 }
                                 else {
                                         echo "This is build" }
