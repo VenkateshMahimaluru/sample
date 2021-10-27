@@ -5,10 +5,10 @@ pipeline {
         stage('Build') {
                 steps {
                         script{
-                               bat '''
+                               bat 
                                echo "${env.BRANCH_NAME}"
                                echo "${env.BUILD_NUMBER}"
-                               '''
+                               
                         }
                    
              }
